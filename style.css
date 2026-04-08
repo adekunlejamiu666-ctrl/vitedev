@@ -1,0 +1,106 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+.body{
+    border: 1px solid white;
+    background-color: #212529;
+    padding: 20px;
+}
+.fa-brands{
+    color: rgba(255, 255, 255, 0.715);
+    margin-left: 5px;
+}
+.fa-brands:hover{
+    color: white;
+}
+.fa-angle-down{
+    font-size: 11px;
+}
+.menu{
+    font-size: 11px;
+}
+.doc{
+    font-size: 10px;
+}
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+.dec{
+    list-style-type: none;
+    text-decoration: none;
+}
+.gray{
+    filter: grayscale(100%) brightness(0) invert(1);
+}
+.grayy{
+    filter: grayscale(100%) brightness(0) invert(0.5);
+}
+.grayy:hover{
+    filter: grayscale(100%) brightness(0) invert(1);
+}
+.block{
+     border:3px solid #851cfe;
+}
+.cardd {
+  column-count: 3;
+  column-gap: 16px;
+  width: 92%;
+  margin: 0 auto;
+  padding-bottom: 6rem;
+}
+
+.quote-card {
+  background: #18181f;
+  border: 1px solid #2a2a30;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  break-inside: avoid;
+  transition: border-color 0.2s;
+}
+.quote-card:hover {
+  border-color: #851CFE;
+}
+
+.quote-card--faded {
+  opacity: 0.4;
+}
+
+.quote-card p {
+  font-size: 0.88rem;
+  color: #c0c0d8;
+  line-height: 1.72;
+}
+
+.quote-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: auto;
+}
+
+.quote-author img {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.quote-author-info .name {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #d0d0e8;
+}
+
+.quote-author-info .handle {
+  font-size: 0.78rem;
+  color: #7b5ea7;
+  font-family: 'IBM Plex Mono', monospace;
+  margin-top: 2px;
+}
