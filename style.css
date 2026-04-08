@@ -16,6 +16,11 @@
 .fa-brands:hover{
     color: white;
 }
+
+.dropdown-item:hover{
+    background-color: #1a1a1e;
+    color: #b977f5;
+}
 .fa-angle-down{
     font-size: 11px;
 }
@@ -36,10 +41,10 @@
     filter: grayscale(100%) brightness(0) invert(1);
 }
 .grayy{
-    filter: grayscale(100%) brightness(0) invert(0.5);
+    filter: grayscale(90%) brightness(0) invert(0.5);
 }
 .grayy:hover{
-    filter: grayscale(100%) brightness(0) invert(1);
+    filter: grayscale(100%) brightness(0) invert(0.9);
 }
 .block{
      border:3px solid #851cfe;
