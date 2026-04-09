@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="background-color: #16171d;" style="overflow: hidden;">
-  <nav class="navbar container navbar-expand-lg mt-4 border" style="background-color: #16171d;">
+<body style="background-color: #15151D;" style="overflow-x: hidden;">
+  <nav class="navbar container navbar-expand-lg mt-4" style="border: 1px solid#2a2a30 ; background-color: #16171d;">
     <div class="container-fluid">
       <img src="./Media/vite-light.t8GCa_VF.svg" style="width: 20%; padding: 20px;" alt="">
 
@@ -26,13 +26,13 @@
             <a class="nav-link active text-white" aria-current="page" href="#">Guide</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-white" aria-current="page" href="#">Config</a>
+            <a class="nav-link active text-white link " aria-current="page" href="#">Config</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active text-white" aria-current="page" href="#">Plugins</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link text-white fool" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Resources <i class="fa-solid fa-angle-down"></i>
             </a>
             <ul class="dropdown-menu menu" style="background-color: #16171d;">
@@ -55,7 +55,7 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link /dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link fool /dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
               v8.0.2 <i class="fa-solid fa-angle-down"></i>
             </a>
@@ -63,7 +63,7 @@
               <li><a class="dropdown-item text-white" href="#">Changelog</a></li>
               <li><a class="dropdown-item text-white" href="#">Contributing</a></li>
               <li>
-                <hr class="dropdown-divider border ">
+                <hr class="dropdown-divider ">
               </li>
               <li><a class="dropdown-item text-white" href="#">Unreleased Docs</a></li>
               <li><a class="dropdown-item text-white" href="#">Vite 7 Docs</a></li>
@@ -79,11 +79,11 @@
         <div class="d-flex align-items-center" role="search">
           <div class="d-flex ">
 
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+            <input class="col-7 rounded-2 me-2" style="background-color: #16171d;" type="search" placeholder="Search" aria-label="Search"/>
             <button class="btn btn-outline-success" type="submit">CtrlK</button>
           </div>
           <div class="nav-item dropdown doc me-4">
-            <a class="nav-link text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link fool text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               文A <i class="fa-solid fa-angle-down"></i>
             </a>
             <ul class="dropdown-menu menu" style="background-color: #16171d;">
@@ -116,7 +116,7 @@
 
   <Section class="col-12 container d-flex p-0"
     style="background-color: #16171d; min-height: 50dvh;">
-    <div class="container d-flex border row m-0 row-cols-lg-2 row-cols-1 p-0">
+    <div class="container d-flex  row m-0 row-cols-lg-2 row-cols-1 p-0" style="border: 1px solid#2a2a30 ;">
 
       <div class=" col p-4 ">
         <P style="color: #98989F;">BY
@@ -130,7 +130,7 @@
           <!-- Buttons -->
           <div class="d-flex gap-3 mb-5">
 
-            <a href="#" class=" btn-outline-dark text-white rounded-3 px-4 py-2 block" style="text-decoration: none;">
+            <a href="#" class=" btn-outline-dark text-white rounded-3 px-4 py-2 block" style="text-decoration: none;  border-image: url(https://vite.dev/assets/vite-featurepanel-1-background.BHnDg8j4.jpg) round 50 !important; border: 5px solid;">
               Get Started
             </a>
 
@@ -142,59 +142,19 @@
 
 
           <!-- Tabs + Code Box -->
-          <div class="bg-black rounded-4 shadow">
-
-            <!-- Tabs -->
-            <ul class="nav nav-tabs border-0 px-4 pt-3">
-
-              <li class="nav-item">
-                <button
-                  class="nav-link active text-white bg-transparent border-0 border-bottom border-2 border-primary">
-                  npm
-                </button>
-              </li>
-
-              <li class="nav-item">
-                <button class="nav-link text-secondary bg-transparent border-0">
-                  Yarn
-                </button>
-              </li>
-
-              <li class="nav-item">
-                <button class="nav-link text-secondary bg-transparent border-0">
-                  pnpm
-                </button>
-              </li>
-
-              <li class="nav-item">
-                <button class="nav-link text-secondary bg-transparent border-0">
-                  Bun
-                </button>
-              </li>
-
-              <li class="nav-item">
-                <button class="nav-link text-secondary bg-transparent border-0">
-                  Deno
-                </button>
-              </li>
-
-            </ul>
-
-
-            <!-- Code Section -->
-            <div class="d-flex justify-content-between align-items-center px-4 py-4 border-top border-secondary">
-
-              <div class="text-info fw-medium">
-                $ npm create vite@latest
-              </div>
-              <div class="text-secondary">
-                bash
-              </div>
-            </div>
+          <div class="code-box">
+          <div class="tabs">
+            <span class="active" data-cmd="$ npm create vite@latest">npm</span>
+            <span data-cmd="$ yarn create vite">Yarn</span>
+            <span data-cmd="$ pnpm create vite">pnpm</span>
+            <span data-cmd="$ bun create vite">Bun</span>
+            <span data-cmd="$ deno init --npm vite">Deno</span>
           </div>
+          <div class="code" id="codeDisplay">$ npm create vite@latest</div>
+        </div>
         </div>
       </div>
-      <div class="border col-6  p-4">
+      <div class="  col-lg-6  p-4" style="border: 1px solid#2a2a30 ;">
         <img src="./Media/vite2.gif" alt="" class="  col-10">
       </div>
     </div>
@@ -202,9 +162,8 @@
 
   <!-- <Section> 2 -->
 
-  <Section class=" container border d-flex align-items-center" style="background-color: #16171d; height: fit-content;">
-    <p class="ms-2 text-white m-0 p-3">Trusted by the world's best software teams</p>
-
+  <Section class=" container d-flex align-items-center" style="border: 1px solid#2a2a30 ;background-color: #16171d; height: fit-content;">
+    <h6 class="ms-2 text-white m-0 p-3" style="font-size: 20px;">Trusted by the world's best software teams</h6>
   </Section>
 
 
@@ -212,24 +171,24 @@
   <!-- section 3 -->
 
   <div class="container" style="background-color: #16171d; height: fit-content;">
-    <div class="row ">
-      <div class=" col-2 border p-3 d-flex justify-content-center">
-        <img src="./Media/openai.svg" alt="" class="col-10 gray">
+    <div class="row " style="border: 1px solid#2a2a30 ;">
+      <div class=" col-2 p-3 d-flex justify-content-center" style="border: 1px solid#2a2a30 ;">
+        <img src="./Media/openai.svg" alt="" class="col-7 gray">
       </div>
-      <div class=" col-2 border p-3 d-flex justify-content-center">
-        <img src="./Media/shopify.svg" alt="" class="col-10 gray">
+      <div class=" col-2 p-3 d-flex justify-content-center" style="border: 1px solid#2a2a30 ;">
+        <img src="./Media/shopify.svg" alt="" class="col-7 gray">
       </div>
-      <div class=" col-2 border p-3 d-flex justify-content-center">
-        <img src="./Media/stripe.svg" alt="" class="col-8 gray">
+      <div class=" col-2  p-3 d-flex justify-content-center" style="border: 1px solid#2a2a30 ;">
+        <img src="./Media/stripe.svg" alt="" class="col-5 gray">
       </div>
-      <div class=" col-2 border p-3 d-flex justify-content-center">
-        <img src="./Media/linear.svg" alt="" class="col-10 gray">
+      <div class=" col-2  p-3 d-flex justify-content-center" style="border: 1px solid#2a2a30 ;">
+        <img src="./Media/linear.svg" alt="" class="col-7 gray">
       </div>
-      <div class=" col-2 border p-3 d-flex justify-content-center">
-        <img src="./Media/clickup.svg" alt="" class="col-11 gray">
+      <div class=" col-2  p-3 d-flex justify-content-center" style="border: 1px solid#2a2a30 ;">
+        <img src="./Media/clickup.svg" alt="" class="col-7 gray">
       </div>
-      <div class=" col-2 border p-3 d-flex justify-content-center">
-        <img src="./Media/wiz.svg" alt="" class="col-10 gray">
+      <div class=" col-2  p-3 d-flex justify-content-center" style="border: 1px solid#2a2a30 ;">
+        <img src="./Media/wiz.svg" alt="" class="col-5 gray">
       </div>
 
     </div>
@@ -239,7 +198,7 @@
 
 
   <!-- <section 4 -->
-  <div class="container border p-0" style="background-color: #16171d;height: fit-content;">
+  <div class="container   p-0" style="border: 1px solid#2a2a30 ;background-color: #16171d;height: fit-content;">
     <div class="  p-5 d-flex flex-column align-items-center text-center">
       <h2 class=" text-white pt-3 col-lg-6 col-11" style="font-size: 48px;">Redefining developer experience</h2>
       <p class=" text-white pb-3">Vite makes web development enjoyable again
@@ -252,9 +211,9 @@
   <!-- <section 5 -->
 
   <Section class="col-12 container d-flex  p-0"
-    style="background-color: #16171d; min-height: 50dvh;">
-    <div class="container d-flex border row m-0 row-cols-lg-2 row-cols-1 p-0">
-      <div class="border col ">
+    style="border: 1px solid#2a2a30; background-color: #16171d; min-height: 50dvh;">
+    <div class="container d-flex  row m-0 row-cols-lg-2 row-cols-1 p-0">
+      <div class=" col  p-4">
         <div class="">
           <h5 class="text-white" style="font-size: 24px;">Instant Server Start</h5>
           <p style="color: #867E8E;">On demand source file serving over native ESM, <br> with blazing fast dependency
@@ -266,7 +225,7 @@
 
         </div>
       </div>
-      <div class="border col  p-4">
+      <div class=" col  p-4" style="border: 1px solid#2a2a30 ;">
         <div class="">
           <h5 class="text-white" style="font-size: 24px;">Lightning Fast HMR</h5>
           <p style="color: #867E8E;">Instantly reflect changes as you save, no matter <br> how big your app is.</p>
@@ -275,14 +234,14 @@
           </div>
         </div>
       </div>
-      <div class="col border  p-4">
+      <div class="col  p-4" style="border: 1px solid#2a2a30 ;">
         <div class="">
           <h5 class="text-white">Rich Features Out of the Box</h5>
           <p style="color: #867E8E;">TypeScript, JSX, CSS, Workers, WebAssembly... and <br> more just a plugin away.</p>
           <img src="./Media/viteee.gif" alt="" class="col-12">
         </div>
       </div>
-      <div class="col  p-4">
+      <div class="col  p-4" >
         <div class="">
           <h5 class="text-white" style="font-size: 24px;">Optimized Build</h5>
           <p style="color: #867E8E;">Advanced tree-shaking, built-in minification, <br> fine-grained chunking control
@@ -300,7 +259,7 @@
 
   <!-- <section 6 -->
 
-  <div class="container border p-0" style="background-color: #16171d;height: fit-content;">
+  <div class="container  p-0" style="border: 1px solid#2a2a30;background-color: #16171d;height: fit-content;">
     <div class="  p-5 d-flex flex-column align-items-center text-center">
       <h2 class=" text-white pt-3 col-lg-6 col-11" style="font-size: 48px;"> A shared foundation to build upon</h2>
 
@@ -313,9 +272,9 @@
 
   <Section class="col-12 container d-flex/  p-0"
     style="background-color: #16171d; min-height: 50dvh;">
-    <div class="container d-flex border row m-0 row-cols-lg-2 row-cols-1 p-0">
+    <div class="container d-flex row m-0 row-cols-lg-2 row-cols-1 p-0">
 
-      <div class="border col p-4 ">
+      <div class=" col p-4 " style="border: 1px solid#2a2a30 ;">
         <div>
           <h5 class="text-white">Flexible Plugins System</h5>
           <p style="color: #867E8E;">Vite plugins extends Rollup's well-designed plugin <br> interface with a few extra
@@ -323,7 +282,7 @@
           <img src="./Media/vitttee (1).gif" alt="" class="col-11">
         </div>
       </div>
-      <div class="border col  p-4">
+      <div class=" col  p-4" style="border: 1px solid#2a2a30 ;">
         <div>
           <h5 class="text-white">Fully Tped API</h5>
           <p style="color: #867E8E;">Designed to be built on top of.</p>
@@ -333,7 +292,7 @@
           </div>
         </div>
       </div>
-      <div class="border col  p-4">
+      <div class="col p-4" style="border: 1px solid#2a2a30;" >
         <div>
           <h5 class="text-white">First-class SSR Support</h5>
           <p style="color: #867E8E;">It's never been easier to setup custom SSR (Server-Side Rendering), or build your
@@ -341,7 +300,7 @@
           <img src="./Media/vite-ssr-support.DvdwoLgL.png" alt="" class="col-11">
         </div>
       </div>
-      <div class="border col  p-4">
+      <div class="col p-4" style="border: 1px solid#2a2a30;" >
         <div>
           <h5 class="text-white">Custinous ecosystem integration</h5>
           <p style="color: #867E8E;">Our CI continuously tests Vite changes against downstream <br> projects, allowing
@@ -356,7 +315,7 @@
 
   <!-- <section 8 -->
 
-  <div class="container border p-0" style="background-color: #16171d;height: fit-content;">
+  <div class="container p-0" style="border: 1px solid#2a2a30;background-color: #16171d;height: fit-content;">
     <div class="  p-5 d-flex flex-column align-items-center text-center">
       <h2 class=" text-white pt-3 col-lg-6 col-11" style="font-size: 48px;">Powering your favorite frameworks and tools
       </h2>
@@ -369,16 +328,16 @@
 
   <!-- section 9 -->
 
-  <Section class=" container border d-flex align-items-center" style="background-color: #16171d; height: 30dvh;">
+  <Section class=" container d-flex align-items-center" style="border: 1px solid#2a2a30;background-color: #16171d; height: 30dvh;">
     <div class=""> <img src="./Media/vite-frameworks.D3X8o4O8.png" alt="" class="col-12"></div>
 
   </Section>
 
   <!-- sectipn 10 -->
 
-  <Section class=" container border" style="background-color: #16171d; height: fit-content;">
+  <Section class=" container" style="border: 1px solid#2a2a30;background-color: #16171d; height: fit-content;">
     <div class="p-4 d-flex justify-content-between">
-      <div class="p-4">
+      <div class="p-4 col-lg-6 cols-11">
         <h3 class="text-white pt-2  ">Loved by the community</h3>
         <p class="text-white pb-3 ">Don't take our word for it - listen to what <br> Vite community members have to say.
         </p>
@@ -392,7 +351,7 @@
         </h2>
       </div>
     </div>
-    <div class="  cardd d-block  d-none d-md-block">
+    <div class="  cardd ">
       <div class="quote-card d-block ">
         <p>I'm loving what Vite enables. We've found building SolidStart that it is less a metaframework but a system of
           symbiotic Vite plugins. While built with SolidJS in mind, they should scale from our simplest template to
@@ -490,7 +449,7 @@
   </Section>
 
   <!-- <section11 -->
-  <div class="container border d-flex justify-content-between" style="background-color: #16171d;height: 50dvh;">
+  <div class="container d-flex justify-content-between" style="border: 1px solid#2a2a30;background-color: #16171d;height: 50dvh;">
     <div class=" p-5 ">
       <div class="">
         <h3 class="text-white">Free & open source</h3>
@@ -508,7 +467,7 @@
   </div>
 
   <!-- <section 12 -->
-  <div class="container border" style="background-color: #16171d;height: 7dvh;">
+  <div class="container" style="border: 1px solid#2a2a30;background-color: #16171d;height: 7dvh;">
     <div class=" p-3">
       <h6 class=" container text-white text-uppercase p-0 m-0" style="font-size: 12px;">IN PARTNERSHIP WITH</h6>
     </div>
@@ -516,19 +475,19 @@
 
   <!-- <section 13 -->
 
-  <Section class="col-12 container border border d-flex p-0"
+  <Section class="col-12 container   d-flex p-0"
     style="background-color: #16171d; min-height: 20dvh;">
-    <div class="container d-flex border row m-0 row-cols-lg-2 row-cols-1 p-0">
+    <div class="container d-flex  row m-0 row-cols-lg-2 row-cols-1 p-0" style="border: 1px solid#2a2a30;">
 
-      <div class="border col-2  p-5 d-flex justify-content-center"><img src="./Media/download (9).svg" alt=""
+      <div class=" col-2  p-5 d-flex justify-content-center" style="border: 1px solid#2a2a30;"><img src="./Media/download (9).svg" alt=""
           class="col-md-3 col-9 grayy"></div>
-      <div class="border col-2  p-5 d-flex justify-content-center"> <img src="./Media/download (10).svg" alt=""
+      <div class=" col-2  p-5 d-flex justify-content-center" style="border: 1px solid#2a2a30;"> <img src="./Media/download (10).svg" alt=""
           class=" col-md-4 col-9 grayy"></div>
     </div>
   </Section>
 
   <!-- <section 14 -->
-  <div class="container border p-0" style="background-color: #16171d;height: 7dvh;">
+  <div class="container p-0" style="border: 1px solid#2a2a30;background-color: #16171d;height: 7dvh;">
     <div class="p-3">
       <h6 class=" container text-white text-uppercase p-0 m-0" style="font-size: 12px;"> PLANTINUM SPONSORS</h6>
       </p>
@@ -536,31 +495,31 @@
   </div>
 
   <!-- <section 15 -->
-  <div class="container border" style="background-color: #16171d; height: fit-content;">
+  <div class="container " style="border: 1px solid#2a2a30;background-color: #16171d; height: fit-content;">
     <div class="container text-center"></div>
     <div class="row">
-      <div class=" col-4 border p-4 d-flex justify-content-center">
+      <div class=" col-4  p-4 d-flex justify-content-center" style="border: 1px solid#2a2a30;">
         <img src="./Media/STORYBLOCK.png" alt="" class="col-md-4 col-9 grayy">
       </div>
-      <div class=" col-4 border p-4 d-flex justify-content-center">
+      <div class=" col-4  p-4 d-flex justify-content-center" style="border: 1px solid#2a2a30;">
         <img src="./Media/coded.png" alt="" class="col-md-4 col-9 grayy">
       </div>
-      <div class="col p-3  border d-flex justify-content-center">
+      <div class="col p-3   d-flex justify-content-center" style="border: 1px solid#2a2a30;">
         <img src="./Media/grep.png" alt="" class="col-md-4 col-9 grayy">
       </div>
     </div>
   </div>
   </div>
-  <div class="container border" style="background-color: #16171d; height: fit-content;">
+  <div class="container " style="border: 1px solid#2a2a30;background-color: #16171d; height: fit-content;">
     <div class="container text-center"></div>
     <div class="row">
-      <div class=" col border p-3 d-flex justify-content-center">
+      <div class=" col  p-3 d-flex justify-content-center" style="border: 1px solid#2a2a30;">
         <img src="./Media/Railway (2).svg" alt="" class="col-md-4 col-9 grayy">
       </div>
-      <div class=" col border p-3 d-flex justify-content-center grayy">
+      <div class=" col  p-3 d-flex justify-content-center" style="border: 1px solid#2a2a30;">
         <img src="./Media/SERPAPI (2).png" class="col-md-4 col-9 grayy" alt="">
       </div>
-      <div class="col p-3  border">
+      <div class="col p-3" style="border: 1px solid#2a2a30;">
         <img src="" alt="">
       </div>
     </div>
@@ -568,7 +527,7 @@
   </div>
 
   <!-- <section16 -->
-  <div class="container border p-0" style="background-color: #16171d;height: 7dvh;">
+  <div class="container p-0" style="border: 1px solid#2a2a30;background-color: #16171d;height: 7dvh;">
     <div class="p-3">
       <h2 class=" container text-white text-uppercase p-0 m-0" style="font-size: 12px;"> GOLD SPONSORS</h2>
       </p>
@@ -576,64 +535,64 @@
   </div>
 
   <!-- <section 17 -->
-  <div class="container border" style="background-color: #16171d; height: fit-content;">
+  <div class="container" style="border: 1px solid#2a2a30;"background-color: #16171d; height: fit-content;">
     <div class="container text-center"></div>
     <div class="row">
-      <div class=" col border p-3 d-flex justify-content-center">
+      <div class=" col p-3 d-flex justify-content-center" style="border: 1px solid#2a2a30;">
         <img src="./Media/mux (1).svg" alt="" class="col-md-4 col-9 grayy">
       </div>
-      <div class=" col border p-3 d-flex justify-content-center">
+      <div class=" col p-3 d-flex justify-content-center" style="border: 1px solid#2a2a30;">
         <img src="./Media/nx (1).svg" alt="" class="col-md-4 col-9 grayy">
       </div>
-      <div class="col p-3  border d-flex justify-content-center">
+      <div class="col p-3 d-flex justify-content-center" style="border: 1px solid#2a2a30;">
         <img src="./Media/transloadit (1).png" alt="" class="col-md-4 col-9 grayy">
       </div>
-      <div class="col p-3  border d-flex justify-content-center">
+      <div class="col p-3 d-flex justify-content-center" style="border: 1px solid#2a2a30;">
         <img src="./Media/handsontable (1).svg" alt="" class="col-md-6 col-9 grayy">
       </div>
-      <div class="col p-3  border d-flex justify-content-center">
+      <div class="col p-3 d-flex justify-content-center" style="border: 1px solid#2a2a30;">
         <img src="./Media/mojam (1).svg" alt="" class="col-md-5 col-9 grayy">
       </div>
     </div>
   </div>
   </div>
-  <div class="container border" style="background-color: #16171d; height: fit-content;">
+  <div class="container" style="border: 1px solid#2a2a30;background-color: #16171d; height: fit-content;">
     <div class="container text-center"></div>
     <div class="row">
-      <div class=" col border p-3 d-flex justify-content-center">
+      <div class=" col p-3 d-flex justify-content-center" style="border: 1px solid#2a2a30;">
         <img src="./Media/convex (1).svg" alt="" class="col-md-5 col-9 grayy">
       </div>
-      <div class=" col border p-3 d-flex justify-content-center">
+      <div class=" col p-3 d-flex justify-content-center" style="border: 1px solid#2a2a30;">
         <img src="./Media/tonkotsu (1).png" alt="" class="col-md-5 col-9 grayy">
       </div>
-      <div class="col p-3  border d-flex justify-content-center">
+      <div class="col p-3 d-flex justify-content-center" style="border: 1px solid#2a2a30;">
         <img src="./Media/catalyst (1).svg" alt="" class="col-md-5 col-9 grayy">
       </div>
-      <div class="col p-3  d-flex justify-content-center">
+      <div class="col p-3  d-flex justify-content-center" style="border: 1px solid#2a2a30;">
         <img src="./Media/zephyr_cloud (1).png" alt="" class="col-md-5 col-9 grayy">
       </div>
-      <div class="col p-3  border d-flex justify-content-center">
+      <div class="col p-3 d-flex justify-content-center" style="border: 1px solid#2a2a30;">
         <img src="./Media/sanity (1).svg" alt="" class="col-md-5 col-9 grayy">
       </div>
     </div>
   </div>
   </div>
-  <div class="container border" style="background-color: #16171d; height: fit-content;">
+  <div class="container" style="border: 1px solid#2a2a30;background-color: #16171d; height: fit-content;">
     <div class="container text-center"></div>
     <div class="row">
-      <div class=" col border p-3 d-flex justify-content-center">
+      <div class=" col p-3 d-flex justify-content-center" style="border: 1px solid#2a2a30;">
         <img src="./Media/follower24 (1).svg" alt="" class="col-md-4 col-9 grayy">
       </div>
-      <div class=" col border p-3 d-flex justify-content-center">
+      <div class=" col p-3 d-flex justify-content-center" style="border: 1px solid#2a2a30;">
          <img src="./Media/aerius_ventilation.png" alt="" class="col-md-4 col-9 grayy">
       </div>
-      <div class="col p-3  border">
+      <div class="col p-3 " style="border: 1px solid#2a2a30;">
 
       </div>
-      <div class="col p-3  border">
+      <div class="col p-3 " style="border: 1px solid#2a2a30;">
 
       </div>
-      <div class="col p-3  border">
+      <div class="col p-3" style="border: 1px solid#2a2a30;">
 
       </div>
     </div>
@@ -642,8 +601,8 @@
 
   <!-- <section>18 -->
 
-  <div class="container border p-0"
-    style="background-color: #16171d;min-height: 60dvh; background-image: url(https://vite.dev/assets/footer-background.BIgtbvhx.jpg);">
+  <div class="container  p-0"
+    style="border: 1px solid#2a2a30;background-color: #16171d;min-height: 60dvh; background-image: url(https://vite.dev/assets/footer-background.BIgtbvhx.jpg);">
     <div class="  p-5 d-flex flex-column align-items-center text-center">
       <h2 class=" text-white pt-3 col-lg-6 col-11" style="font-size: 48px;">Start building with Vite</h2>
       <p class="text-white">Prepare for a development environment that can <br> finally keep pace with the speed of your
@@ -655,7 +614,7 @@
 
   <!-- <section 19> -->
 
-  <div class="container border d-flex justify-content-between" style="background-color: #16171d;min-height: 100dvh;">
+  <div class="container d-flex justify-content-between " style="border: 1px solid#2a2a30;background-color: #16171d;min-height: 100dvh;">
     <div class="  p-2 d-flex gap-5 ">
       <div class="mt-md-5">
         <p class="" style="font-size: 10px; color: #98989F; font-family: monospace;">VITES</p>
@@ -708,7 +667,7 @@
 
   <!-- <section 20 -->
 
-  <div class="container border p-0" style="background-color: #16171d;height: 7dvh;">
+  <div class="container p-0" style="background-color: #16171d;height: 7dvh;" style="border: 1px solid#2a2a30;">
     <div class=" container">
       <p class="text-white">© 2019-present VoidZero Inc. and Vite contributors. (faeb7467)</p>
     </div>
@@ -716,7 +675,17 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
     </script>
-
+<script>
+  const tabs = document.querySelectorAll(".tabs span");
+      const codeDisplay = document.getElementById("codeDisplay");
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+          codeDisplay.textContent = tab.dataset.cmd;
+        });
+      });
+</script>
 </body>
 
 </html>

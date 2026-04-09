@@ -19,7 +19,14 @@
 
 .dropdown-item:hover{
     background-color: #1a1a1e;
-    color: #b977f5;
+    color: #b977f5 !important;
+}
+
+.nav-link:hover{
+   color: #b977f5 !important;
+}
+.fool:hover{
+   opacity: 0.4 !important;
 }
 .fa-angle-down{
     font-size: 11px;
@@ -38,7 +45,7 @@
     text-decoration: none;
 }
 .gray{
-    filter: grayscale(100%) brightness(0) invert(1);
+    filter: grayscale(100%) brightness(0) invert(0.5);
 }
 .grayy{
     filter: grayscale(90%) brightness(0) invert(0.5);
@@ -49,6 +56,59 @@
 .block{
      border:3px solid #851cfe;
 }
+
+.code-box {
+  margin-top: 30px;
+  background: #11111c;
+  border-radius: 12px;
+  width: 100%;
+  margin-bottom: 5rem;
+  border: 1px solid #2a2a30;
+}
+
+.tabs {
+  display: flex;
+  gap: 15px;
+  padding: 12px 15px;
+  border-bottom: 1px solid #222;
+  font-size: 13px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.tabs span {
+  transition: color 0.15s;
+}
+
+.tabs span:hover {
+  color: #ebebeb;
+}
+
+.tabs span.active {
+  color: #fff;
+  border-bottom: 2px solid #747bff;
+  padding-bottom: 5px;
+}
+
+.btn-outline-dark{
+  transition: 0.2s ease;
+}
+
+.btn-outline-dark:hover{
+  transform: scale(1.1);
+}
+
+.btn-outline-light:hover{
+  transform: scale(1.1);
+}
+.btn:hover{
+  transform: scale(1.1);
+}
+.code {
+  padding: 15px;
+  font-family: monospace;
+  color: #a78bfa;
+}
 .cardd {
   column-count: 3;
   column-gap: 16px;
@@ -56,7 +116,6 @@
   margin: 0 auto;
   padding-bottom: 6rem;
 }
-
 .quote-card {
   background: #18181f;
   border: 1px solid #2a2a30;
@@ -108,4 +167,15 @@
   color: #7b5ea7;
   font-family: 'IBM Plex Mono', monospace;
   margin-top: 2px;
+}
+@media (max-width: 1024px) {
+  .cardd{
+    column-count: 2;
+  }
+}
+@media (max-width: 480px) {
+  .masonry {
+    column-count: 1;
+    padding-bottom: 0;
+  }
 }
