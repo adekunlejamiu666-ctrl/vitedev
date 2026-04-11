@@ -77,53 +77,116 @@
         </ul>
 
         <!-- search -->
-         <div style="display:flex; align-items:center; background-color:#15182b; padding:10px 15px; border-radius:12px; ">
+        <div onclick="openModal()"
+          style="display:flex; align-items:center; background-color:#14121A; padding:7px 10px; border-radius:12px;">
+          <span style="color:#a0a4c0; font-size:14px;"><i class="fa-solid fa-magnifying-glass text-white"></i></span>
 
-<span style="color:#a0a4c0; font-size:14px;">🔍</span>
+          <input type="text" placeholder="Search"
+            style="border:none; outline:none; background:transparent; color:#cfd3ff; font-size:10px; flex:1;">
 
-<input type="text" placeholder="Search"
-style="border:none; outline:none; background:transparent; color:#cfd3ff; font-size:14px; flex:1;">
-
-<span style="background-color:#1e223a; color:#a0a4c0; font-size:12px; padding:4px 8px; border-radius:6px;">
-Ctrl K
-</span>
-
-</div>
-         <!-- search -->
-          <div class="nav-item dropdown doc me-4">
-            <a class="nav-link fool text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              文A <i class="fa-solid fa-angle-down"></i>
-            </a>
-            <ul class="dropdown-menu menu" style="background-color: #16171d;">
-              <li><a class="dropdown-item text-white" href="#">English</a></li>
-              <li><a class="dropdown-item text-white" href="#">简体中文</a></li>
-              <li><a class="dropdown-item text-white" href="#">日本語</a></li>
-              <li><a class="dropdown-item text-white" href="#">Español</a></li>
-              <li><a class="dropdown-item text-white" href="#">Português</a></li>
-              <li><a class="dropdown-item text-white" href="#">한국어</a></li>
-              <li><a class="dropdown-item text-white" href="#">Deutsch</a></li>
-              <li><a class="dropdown-item text-white" href="#">فارسی</a></li>
-              <li>
-            </ul>
+          <span style="background-color:#14121A; color:#a0a4c0; font-size:12px; padding:3px 5px; border-radius:6px;">
+            Ctrl K
+          </span>
           </div>
+          <!-- Modal -->
+  <div id="searchModal" 
+    style="position:fixed; inset:0; background:rgba(0,0,0,0.6); display:none; align-items:flex-start; justify-content:center; padding-top:80px; z-index:999;">
 
-          <div class="">
-            <i class="fa-brands fa-bluesky"></i>
-            <i class="fa-brands fa-mastodon"></i>
-            <i class="fa-brands fa-x-twitter"></i>
-            <i class="fa-brands fa-discord"></i>
-            <i class="fa-brands fa-github"></i>
-          </div>
+    <!-- Modal Box -->
+    <div style="width:500px; max-width:90%; background:#111827; border-radius:16px; border:1px solid rgba(255,255,255,0.1); padding:20px;">
+
+      <!-- Input -->
+      <div style="display:flex; align-items:center; background:#0b0f19; border-radius:10px; padding:10px; border:1px solid rgba(255,255,255,0.08);">
+
+        <i class="fa-solid fa-magnifying-glass" style="color:#9aa0a6;"></i>
+
+        <input 
+          id="searchInput"
+          type="text" 
+          placeholder="Search anything..."
+          style="background:transparent; border:none; outline:none; color:#fff; flex:1; margin-left:10px;"
+        >
+
+        <span onclick="closeModal()" 
+          style="font-size:12px; color:#9aa0a6; cursor:pointer;">
+          ESC
+        </span>
+
+      </div>
+
+      <!-- Results -->
+      <!-- <div style="margin-top:15px; color:#9aa0a6; font-size:14px;">
+        to navigate
+      </div> -->
+
+    </div>
+
+  </div>
+  <!-- JS -->
+  <script>
+    const modal = document.getElementById("searchModal");
+    const input = document.getElementById("searchInput");
+
+    function openModal() {
+      modal.style.display = "flex";
+      setTimeout(() => input.focus(), 100);
+    }
+
+    function closeModal() {
+      modal.style.display = "none";
+    }
+
+    // Ctrl + K shortcut
+    document.addEventListener("keydown", function(e) {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        openModal();
+      }
+
+      if (e.key === "Escape") {
+        closeModal();
+      }
+    });
+
+    // Click outside to close
+    modal.addEventListener("click", function(e) {
+      if (e.target === modal) closeModal();
+    });
+  </script>
+        <!-- search -->
+        <div class="nav-item dropdown doc me-4">
+          <a class="nav-link fool text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            文A <i class="fa-solid fa-angle-down"></i>
+          </a>
+          <ul class="dropdown-menu menu" style="background-color: #16171d;">
+            <li><a class="dropdown-item text-white" href="#">English</a></li>
+            <li><a class="dropdown-item text-white" href="#">简体中文 <i class="fa-solid fa-up-right-from-square"></i></a></li>
+            <li><a class="dropdown-item text-white" href="#">日本語 <i class="fa-solid fa-up-right-from-square"></i></a></li>
+            <li><a class="dropdown-item text-white" href="#">Español <i class="fa-solid fa-up-right-from-square"></i></a></li>
+            <li><a class="dropdown-item text-white" href="#">Português <i class="fa-solid fa-up-right-from-square"></i></a></li>
+            <li><a class="dropdown-item text-white" href="#">한국어 <i class="fa-solid fa-up-right-from-square"></i></a></li>
+            <li><a class="dropdown-item text-white" href="#">Deutsch <i class="fa-solid fa-up-right-from-square"></i></a></li>
+            <li><a class="dropdown-item text-white" href="#">فارسی <i class="fa-solid fa-up-right-from-square"></i></a></li>
+            <li>
+          </ul>
+        </div>
+
+        <div class="">
+          <i class="fa-brands fa-bluesky"></i>
+          <i class="fa-brands fa-mastodon"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+          <i class="fa-brands fa-discord"></i>
+          <i class="fa-brands fa-github"></i>
         </div>
       </div>
+    </div>
     </div>
   </nav>
 
 
   <!-- Section 1 -->
 
-  <Section class="col-12 container d-flex p-0"
-    style="background-color: #16171d; min-height: 50dvh;">
+  <Section class="col-12 container d-flex p-0" style="background-color: #16171d; min-height: 50dvh;">
     <div class="container d-flex  row m-0 row-cols-lg-2 row-cols-1 p-0" style="border: 1px solid#2a2a30 ;">
 
       <div class=" col p-4 ">
@@ -138,7 +201,8 @@ Ctrl K
           <!-- Buttons -->
           <div class="d-flex gap-3 mb-5">
 
-            <a href="#" class=" btn-outline-dark text-white rounded-3 px-4 py-2 block" style="text-decoration: none;  border-image: url(https://vite.dev/assets/vite-featurepanel-1-background.BHnDg8j4.jpg) round 50 !important; border: 5px solid;">
+            <a href="#" class=" btn-outline-dark text-white rounded-3 px-4 py-2 block"
+              style="text-decoration: none;  border-image: url(https://vite.dev/assets/vite-featurepanel-1-background.BHnDg8j4.jpg) round 50 !important; border: 5px solid;">
               Get Started
             </a>
 
@@ -151,15 +215,15 @@ Ctrl K
 
           <!-- Tabs + Code Box -->
           <div class="code-box">
-          <div class="tabs">
-            <span class="active" data-cmd="$ npm create vite@latest">npm</span>
-            <span data-cmd="$ yarn create vite">Yarn</span>
-            <span data-cmd="$ pnpm create vite">pnpm</span>
-            <span data-cmd="$ bun create vite">Bun</span>
-            <span data-cmd="$ deno init --npm vite">Deno</span>
+            <div class="tabs">
+              <span class="active" data-cmd="$ npm create vite@latest">npm</span>
+              <span data-cmd="$ yarn create vite">Yarn</span>
+              <span data-cmd="$ pnpm create vite">pnpm</span>
+              <span data-cmd="$ bun create vite">Bun</span>
+              <span data-cmd="$ deno init --npm vite">Deno</span>
+            </div>
+            <div class="code" id="codeDisplay">$ npm create vite@latest</div>
           </div>
-          <div class="code" id="codeDisplay">$ npm create vite@latest</div>
-        </div>
         </div>
       </div>
       <div class="  col-lg-6  p-4" style="border: 1px solid#2a2a30 ;">
@@ -170,7 +234,8 @@ Ctrl K
 
   <!-- <Section> 2 -->
 
-  <Section class=" container d-flex align-items-center" style="border: 1px solid#2a2a30 ;background-color: #16171d; height: fit-content;">
+  <Section class=" container d-flex align-items-center"
+    style="border: 1px solid#2a2a30 ;background-color: #16171d; height: fit-content;">
     <h6 class="ms-2 text-white m-0 p-3" style="font-size: 20px;">Trusted by the world's best software teams</h6>
   </Section>
 
@@ -249,7 +314,7 @@ Ctrl K
           <img src="./Media/viteee.gif" alt="" class="col-12">
         </div>
       </div>
-      <div class="col  p-4" >
+      <div class="col  p-4">
         <div class="">
           <h5 class="text-white" style="font-size: 24px;">Optimized Build</h5>
           <p style="color: #867E8E;">Advanced tree-shaking, built-in minification, <br> fine-grained chunking control
@@ -278,8 +343,7 @@ Ctrl K
 
   <!-- <section 7 -->
 
-  <Section class="col-12 container d-flex/  p-0"
-    style="background-color: #16171d; min-height: 50dvh;">
+  <Section class="col-12 container d-flex/  p-0" style="background-color: #16171d; min-height: 50dvh;">
     <div class="container d-flex row m-0 row-cols-lg-2 row-cols-1 p-0">
 
       <div class=" col p-4 " style="border: 1px solid#2a2a30 ;">
@@ -300,7 +364,7 @@ Ctrl K
           </div>
         </div>
       </div>
-      <div class="col p-4" style="border: 1px solid#2a2a30;" >
+      <div class="col p-4" style="border: 1px solid#2a2a30;">
         <div>
           <h5 class="text-white">First-class SSR Support</h5>
           <p style="color: #867E8E;">It's never been easier to setup custom SSR (Server-Side Rendering), or build your
@@ -308,7 +372,7 @@ Ctrl K
           <img src="./Media/vite-ssr-support.DvdwoLgL.png" alt="" class="col-11">
         </div>
       </div>
-      <div class="col p-4" style="border: 1px solid#2a2a30;" >
+      <div class="col p-4" style="border: 1px solid#2a2a30;">
         <div>
           <h5 class="text-white">Custinous ecosystem integration</h5>
           <p style="color: #867E8E;">Our CI continuously tests Vite changes against downstream <br> projects, allowing
@@ -336,7 +400,8 @@ Ctrl K
 
   <!-- section 9 -->
 
-  <Section class=" container d-flex align-items-center" style="border: 1px solid#2a2a30;background-color: #16171d; height: 30dvh;">
+  <Section class=" container d-flex align-items-center"
+    style="border: 1px solid#2a2a30;background-color: #16171d; height: 30dvh;">
     <div class=""> <img src="./Media/vite-frameworks.D3X8o4O8.png" alt="" class="col-12"></div>
 
   </Section>
@@ -345,12 +410,12 @@ Ctrl K
 
   <Section class=" container" style="border: 1px solid#2a2a30;background-color: #16171d; height: fit-content;">
     <div class="p-4 d-flex justify-content-between">
-      <div class="p-4 col-lg-6 cols-11">
+      <div class="p-4 col-lg-6 cols-12">
         <h3 class="text-white pt-2  ">Loved by the community</h3>
         <p class="text-white pb-3 ">Don't take our word for it - listen to what <br> Vite community members have to say.
         </p>
       </div class="">
-      <div class="d-flex gap-5 p-5">
+      <div class="d-flex gap-5 p-5  ">
         <h2 class="text-white">75k+ <p style="font-size: 18px; color: #867E8E;"> <i class="fa-brands fa-discord"></i>
             Github Stars</p>
         </h2>
@@ -457,7 +522,8 @@ Ctrl K
   </Section>
 
   <!-- <section11 -->
-  <div class="container d-flex justify-content-between" style="border: 1px solid#2a2a30;background-color: #16171d;height: 50dvh;">
+  <div class="container d-flex justify-content-between"
+    style="border: 1px solid#2a2a30;background-color: #16171d;height: 50dvh;">
     <div class=" p-5 ">
       <div class="">
         <h3 class="text-white">Free & open source</h3>
@@ -483,14 +549,13 @@ Ctrl K
 
   <!-- <section 13 -->
 
-  <Section class="col-12 container   d-flex p-0"
-    style="background-color: #16171d; min-height: 20dvh;">
-    <div class="container d-flex  row m-0 row-cols-lg-2 row-cols-1 p-0" style="border: 1px solid#2a2a30;">
+  <Section class="col-12 container   d-flex p-0" style="background-color: #16171d; min-height: 20dvh;">
+    <div class="container d-flex  row m-0 col-lg-6 cols-12 p-0" style="border: 1px solid#2a2a30;">
 
-      <div class=" col-2  p-5 d-flex justify-content-center" style="border: 1px solid#2a2a30;"><img src="./Media/download (9).svg" alt=""
-          class="col-md-3 col-9 grayy"></div>
-      <div class=" col-2  p-5 d-flex justify-content-center" style="border: 1px solid#2a2a30;"> <img src="./Media/download (10).svg" alt=""
-          class=" col-md-4 col-9 grayy"></div>
+      <div class=" col-2  p-5 d-flex justify-content-center" style="border: 1px solid#2a2a30;"><img
+          src="./Media/download (9).svg" alt="" class="col-md-3 col-9 grayy"></div>
+      <div class=" col-2  p-5 d-flex justify-content-center" style="border: 1px solid#2a2a30;"> <img
+          src="./Media/download (10).svg" alt="" class=" col-md-4 col-9 grayy"></div>
     </div>
   </Section>
 
@@ -543,7 +608,7 @@ Ctrl K
   </div>
 
   <!-- <section 17 -->
-  <div class="container" style="border: 1px solid#2a2a30;"background-color: #16171d; height: fit-content;">
+  <div class="container" style="border: 1px solid#2a2a30;" background-color: #16171d; height: fit-content;">
     <div class="container text-center"></div>
     <div class="row">
       <div class=" col p-3 d-flex justify-content-center" style="border: 1px solid#2a2a30;">
@@ -592,7 +657,7 @@ Ctrl K
         <img src="./Media/follower24 (1).svg" alt="" class="col-md-4 col-9 grayy">
       </div>
       <div class=" col p-3 d-flex justify-content-center" style="border: 1px solid#2a2a30;">
-         <img src="./Media/aerius_ventilation.png" alt="" class="col-md-4 col-9 grayy">
+        <img src="./Media/aerius_ventilation.png" alt="" class="col-md-4 col-9 grayy">
       </div>
       <div class="col p-3 " style="border: 1px solid#2a2a30;">
 
@@ -622,7 +687,8 @@ Ctrl K
 
   <!-- <section 19> -->
 
-  <div class="container d-flex justify-content-between " style="border: 1px solid#2a2a30;background-color: #16171d;min-height: 100dvh;">
+  <div class="container d-flex justify-content-between "
+    style="border: 1px solid#2a2a30;background-color: #16171d;min-height: 100dvh;">
     <div class="  p-2 d-flex gap-5 ">
       <div class="mt-md-5">
         <p class="" style="font-size: 10px; color: #98989F; font-family: monospace;">VITES</p>
@@ -683,17 +749,17 @@ Ctrl K
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
     </script>
-<script>
-  const tabs = document.querySelectorAll(".tabs span");
-      const codeDisplay = document.getElementById("codeDisplay");
-      tabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          tabs.forEach((t) => t.classList.remove("active"));
-          tab.classList.add("active");
-          codeDisplay.textContent = tab.dataset.cmd;
-        });
+  <script>
+    const tabs = document.querySelectorAll(".tabs span");
+    const codeDisplay = document.getElementById("codeDisplay");
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+        codeDisplay.textContent = tab.dataset.cmd;
       });
-</script>
+    });
+  </script>
 </body>
 
 </html>
